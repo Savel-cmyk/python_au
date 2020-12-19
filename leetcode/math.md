@@ -1,4 +1,4 @@
-#Math
+# Math
 
 + [Reverse Integer](#reverse-integer)
 + [Palindrome Number](#palindrome-number)
