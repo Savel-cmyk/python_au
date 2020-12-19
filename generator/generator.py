@@ -38,7 +38,7 @@ def read_all_file(file_name):
 def merge_solutions(old_solution, new_solution, emerged_link):
     old_splitted = old_solution.split('\n\n')
     if len(old_splitted) == 1:
-        return '#Math\n\n{}'.format('\n\n'.join(map(lambda x: x, [emerged_link, new_solution])))
+        return '# Math\n\n{}'.format('\n\n'.join(map(lambda x: x, [emerged_link, new_solution])))
     return '{}\n{}\n\n{}\n\n{}'.format('\n\n'.join(old_splitted[:2]), emerged_link, '\n\n'.join(old_splitted[2:]), new_solution)
 
 def main(src, dst):
