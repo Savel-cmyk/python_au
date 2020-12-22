@@ -1,6 +1,5 @@
 # Array
 
-
 + [Max Consecutive Ones](#max-consecutive-ones)
 + [Reshape the Matrix](#reshape-the-matrix)
 + [Image Smoother](#image-smoother)
