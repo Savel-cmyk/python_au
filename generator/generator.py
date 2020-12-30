@@ -1,4 +1,4 @@
-#import sys
+import sys
 
 class LeetCodeSource:
     def __init__(self, title, link, code):
@@ -62,5 +62,5 @@ def main(src, dst):
     result = merge_solutions(old_solutions, new_solutions, emerged_links, header)
     write_to_md(dst, result)
 
-#if __name__ == "__main__":
-main(r'C:\Users\savel\PycharmProjects\python_au\source_leetcode_data.txt', r'C:\Users\savel\PycharmProjects\python_au\leetcode\linked-list.md')
+if __name__ == "__main__":
+    main(r'C:\Users\savel\PycharmProjects\python_au\source_leetcode_data.txt', r'C:\Users\savel\PycharmProjects\python_au\leetcode\linked-list.md')
