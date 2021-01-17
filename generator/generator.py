@@ -63,4 +63,4 @@ def main(src, dst):
     write_to_md(dst, result)
 
 if __name__ == "__main__":
-    main(r'C:\Users\savel\PycharmProjects\python_au\source_leetcode_data.txt', r'C:\Users\savel\PycharmProjects\python_au\leetcode\linked-list.md')
+    main(sys.argv[1], sys.argv[2])

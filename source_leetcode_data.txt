@@ -1,0 +1,34 @@
+101. Symmetric Tree
+https://leetcode.com/problems/symmetric-tree/
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        queue = [root]
+        next_queue = []
+        level = []
+        src = TreeNode(-1)
+        while queue != [] and root is not None:
+            for curr in queue:
+                level.append(curr.val)
+                if curr.left == None:
+                    next_queue.append(src)
+                elif curr.left != None:
+                    next_queue.append(curr.left)
+                if curr.right == None:
+                    next_queue.append(src)
+                elif curr.right != None:
+                    next_queue.append(curr.right)
+            if level != list(reversed(level)):
+                return False
+            if level.count(-1) != len(level):
+                queue = next_queue
+            else:
+                break
+            next_queue = []
+            level = []
+        return True
