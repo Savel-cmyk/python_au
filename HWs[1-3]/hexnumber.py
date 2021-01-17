@@ -70,7 +70,6 @@ class HexNumber:
 
             for i, string in enumerate(lst):
                 lst[i] = dct1[string]
-
             if int(lst[0]) == 0:
                 del lst[0]
             return ''.join(lst)
