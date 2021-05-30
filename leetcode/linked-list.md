@@ -10,6 +10,7 @@
 + [Reorder List](#reorder-list)
 + [Intersection of Two Linked Lists](#intersection-of-two-linked-lists)
 + [Sort List](#sort-list)
++ [Merge k Sorted Lists](#merge-k-sorted-lists)
 
 ## Reverse Linked List
 
@@ -249,4 +250,44 @@ class Solution:
                 curr.next = ListNode(val)
                 curr = curr.next
         return head
+```
+
+## Merge k Sorted Lists
+
+https://leetcode.com/problems/merge-k-sorted-lists/
+
+```python
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        if not lists and (len(lists) == 0):
+            return None
+        
+        while len(lists) > 1:
+            mergedLists = []
+            for i in range(0, len(lists), 2):
+                l1 = lists[i]
+                l2 = lists[i + 1] if (1 + i) < len(lists) else None
+                mergedLists.append(self.mergeTwoLists(l1, l2))
+            lists = mergedLists
+        return lists[0]
+    
+    def mergeTwoLists(self, l1, l2):
+        sorted_list = ListNode()
+        curr = sorted_list
+        
+        while l1 is not None and l2 is not None:
+            if l1.val < l2.val:
+                curr.next = l1
+                l1 = l1.next
+            else:
+                curr.next = l2
+                l2 = l2.next
+            curr = curr.next
+            
+        if l1 is None:
+            curr.next = l2
+        elif l2 is None:
+            curr.next = l1
+            
+        return sorted_list.next
 ```
