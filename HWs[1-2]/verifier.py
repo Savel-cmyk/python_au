@@ -1,6 +1,6 @@
 import requests
 
-TOKEN = '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'
+TOKEN = ''
 
 TASK_PREFIX = ['LEETCODE', 'GENERATOR', 'TRIANGLE', 'HEXNUMBER', 'REQUESTS', 'ITERATOR']
 GROUP = ['1021', '1022']
